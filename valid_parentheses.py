@@ -11,13 +11,11 @@ An input string is valid if:
 class Solution:
     def isValid(self, s: str) -> bool:
         mapper = {'(': ')', '[': ']', '{': '}'}
-        open_brackets = ('([{')
-        close_brackets = (')]}')
         queue = []
         for bracket in s:
-            if bracket in open_brackets:
+            if bracket in mapper.keys():
                 queue.append(mapper[bracket])
-            elif bracket in close_brackets:
+            elif bracket in mapper.values():
                 if not queue or bracket != queue.pop():
                     return False
         if not queue:
