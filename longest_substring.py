@@ -2,6 +2,7 @@
 
 # Difficulty: Medium
 
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         unique_characters = []
@@ -11,8 +12,9 @@ class Solution:
                 unique_characters.append(character)
             else:
                 longest.append(len(unique_characters))
-                unique_characters = unique_characters[unique_characters.index(character)+1:]
+                unique_characters = unique_characters[unique_characters.index(
+                    character)+1:]
                 unique_characters.append(character)
-                
+
         longest.append(len(unique_characters))
         return max(longest)
