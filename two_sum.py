@@ -4,8 +4,9 @@ You may assume that each input would have exactly one solution, and you may not 
 
 # Difficulty: Easy
 
+
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+    def twoSum(self, nums: list, target: int) -> list:
         for i in range(len(nums)-1):
             for j in range(i+1, len(nums)):
                 if nums[i] + nums[j] == target:
