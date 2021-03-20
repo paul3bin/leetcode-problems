@@ -8,9 +8,10 @@ assume that your function returns 0 when the reversed integer overflows.
 
 # Difficulty: Easy
 
+
 class Solution:
     def reverse(self, x: int) -> int:
-        if int(str(abs(x))[::-1])>((2**31)-1) or -int(str(abs(x))[::-1])<(-2**31):
+        if int(str(abs(x))[::-1]) > ((2**31)-1) or -int(str(abs(x))[::-1]) < (-2**31):
             return 0
         elif x < 0:
             return -int(str(abs(x))[::-1])
