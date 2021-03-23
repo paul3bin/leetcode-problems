@@ -5,20 +5,23 @@ Merge all the linked-lists into one sorted linked-list and return it."""
 # Difficulty: Hard
 
 # Definition for singly-linked list.
+
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-        
+
+
 class Solution:
-    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+    def mergeKLists(self, lists: ListNode) -> ListNode:
         temp = []
         for llist in lists:
             t = llist
             while t:
                 temp.append(t.val)
                 t = t.next
-        
+
         head = ListNode(0)
         sorted_list = [head]
         temp.sort()
