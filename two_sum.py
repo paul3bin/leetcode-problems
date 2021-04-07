@@ -7,7 +7,8 @@ You may assume that each input would have exactly one solution, and you may not 
 
 class Solution:
     def twoSum(self, nums: list, target: int) -> list:
-        for i in range(len(nums)-1):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
+        for i in range(len(nums)):
+            if (target-nums[i]) in nums[i+1:]:
+                return [i, nums[i+1:].index(target-nums[i])+i+1]
+            elif (target-nums[i]) in nums[:i]:
+                return [i, nums[:i].index(target-nums[i])]
